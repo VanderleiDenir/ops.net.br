@@ -19,7 +19,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -89,6 +89,7 @@
     <Content Include="assets\css\bootstrap-theme.min.css" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\cards.css" />
     <Content Include="assets\css\landing-page.css" />
     <Content Include="assets\css\auditoria.css" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
@@ -118,7 +119,12 @@
     <Content Include="CidadesPendenciaGrid.aspx" />
     <Content Include="AuditarSenador.aspx" />
     <Content Include="AuditoriaPF.aspx" />
+    <Content Include="Componentes\CardPolitico.ascx" />
+    <Content Include="Componentes\LoadUserControlHelper.ascx" />
+    <Content Include="DashBoard.aspx" />
+    <Content Include="DetalhesSecretarios.aspx" />
     <Content Include="EmailPendente.aspx" />
+    <Content Include="FuncionariosPorParlamentar.aspx" />
     <Content Include="Sobre.aspx" />
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
@@ -164,6 +170,8 @@
     <Content Include="SolicitaDocumentos.aspx" />
     <Content Include="SQL\1.sql" />
     <Content Include="Global.asax" />
+    <Content Include="SQL\auditoria_cards_bi.sql" />
+    <Content Include="SQL\auditoria_secretario.sql" />
     <Content Include="Suspeitas.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -223,6 +231,7 @@
     <Compile Include="Classes\Coluna.cs" />
     <Compile Include="Classes\ComandoSQL.cs" />
     <Compile Include="Classes\Comum.cs" />
+    <Compile Include="Classes\ConexaoMySQL.cs" />
     <Compile Include="Classes\Configuracao.cs" />
     <Compile Include="Classes\CookieAwareWebClient.cs">
       <SubType>Component</SubType>
@@ -233,12 +242,45 @@
     <Compile Include="Classes\Extenssion.cs" />
     <Compile Include="Classes\FormatarDados.cs" />
     <Compile Include="Classes\FornecedorQuadroSocietario.cs" />
+    <Compile Include="Classes\Parlamentar.cs" />
+    <Compile Include="Componentes\CardPolitico.ascx.cs">
+      <DependentUpon>CardPolitico.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Componentes\CardPolitico.ascx.designer.cs">
+      <DependentUpon>CardPolitico.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\LoadUserControlHelper.ascx.cs">
+      <DependentUpon>LoadUserControlHelper.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Componentes\LoadUserControlHelper.ascx.designer.cs">
+      <DependentUpon>LoadUserControlHelper.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard.aspx.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard.aspx.designer.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalhesSecretarios.aspx.cs">
+      <DependentUpon>DetalhesSecretarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalhesSecretarios.aspx.designer.cs">
+      <DependentUpon>DetalhesSecretarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EmailPendente.aspx.cs">
       <DependentUpon>EmailPendente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EmailPendente.aspx.designer.cs">
       <DependentUpon>EmailPendente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FuncionariosPorParlamentar.aspx.cs">
+      <DependentUpon>FuncionariosPorParlamentar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FuncionariosPorParlamentar.aspx.designer.cs">
+      <DependentUpon>FuncionariosPorParlamentar.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaInterna.Master.cs">
       <DependentUpon>PaginaInterna.Master</DependentUpon>
@@ -538,6 +580,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="PaginaInterna.Master" />
+    <None Include="Properties\PublishProfiles\publicacaoOPS.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -558,7 +601,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1139</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/AuditoriaParlamentar</IISUrl>
+          <IISUrl>http://localhost:64468/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

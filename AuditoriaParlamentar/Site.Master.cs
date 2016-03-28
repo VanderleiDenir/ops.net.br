@@ -21,10 +21,11 @@ namespace AuditoriaParlamentar
                 {
                     autenticado = false;
                     plcRevisor.Visible = false;
-                }
-
+                }                
                 HyperLinkDeputadoFederal.HRef = "PesquisaInicio.aspx"; //?CARGO=" + Pesquisa.CARGO_DEPUTADO_FEDERAL;
                 HyperLinkSenador.HRef = "AuditarSenador.aspx";// "PesquisaInicio.aspx?CARGO=" + Pesquisa.CARGO_SENADOR;
+                HyperLinkFuncionarios.HRef = "FuncionariosPorParlamentar.aspx";
+                HyperLinkDashBoard.HRef = "DashBoard.aspx"; 
             }
         }
     }

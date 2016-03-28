@@ -1,0 +1,81 @@
+﻿.src-image {
+  display: none;
+}
+
+.cardCarregando
+ {
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #CCC;
+    border-radius: 8px;
+    text-align: center;
+    padding: 0;
+    background-color: #1b809e;
+    color: #000;
+} 
+
+.card {
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #CCC;
+  border-radius: 8px;
+  text-align: center;
+  padding: 0;
+  background-color: #FFFFFF;
+  color: #000;
+}
+
+.card .avatar {
+  position: relative;
+  margin-top: 15px;
+  z-index: 100;
+}
+
+.header-bgTituloCard {
+  /* This stretches the canvas across the entire hero unit */
+  position: absolute;
+  background-color:lightcyan;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px #1b809e solid;
+  /* This positions the canvas under the text */
+  z-index: 1;
+}
+
+
+ .header-bgDesempenhoRuim {
+  /* This stretches the canvas across the entire hero unit */
+  position: absolute;
+  background-color:tomato;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px #1b809e solid;
+  /* This positions the canvas under the text */
+  z-index: 1;
+}
+
+.header-bgDesempenhoBom {
+  /* This stretches the canvas across the entire hero unit */
+  position: absolute;
+  background-color:lightgreen;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px #1b809e solid;
+  /* This positions the canvas under the text */
+  z-index: 1;
+}
+
+.card .avatar img {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid rgba(0,0,30,0.8);
+}
